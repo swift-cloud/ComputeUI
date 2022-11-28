@@ -5,19 +5,24 @@ Build server side rendered webpages in SwiftUI
 ```swift
 import ComputeUI
 
-let router = Router()
+struct IndexPage: View {
 
-router.get("/") { req, _ in
-    ScrollView {
-        Text("Hello, Swift")
-            .font(.title)
+    @Environment(\.request) var req
 
-        Text("This is a server rendered SwiftUI website")
-            .font(.subheadline)
+    var body: some View {
+        VStack {
+            Text("Hello, Swift")
+                .font(.title)
 
-        Text("Your ip address \(req.clientIpAddress().stringValue)")
+            Text("This is a server rendered SwiftUI website")
+                .font(.subheadline)
+
+            Text("Your ip address \(req.clientIpAddress().stringValue)")
+        }
     }
 }
 
-try await router.listen()
+try await Router()
+    .get("/", IndexPage())
+    .listen()
 ```
