@@ -5,10 +5,6 @@
 //  Created by Andrew Barba on 11/27/22.
 //
 
-@_exported import Compute
-@_exported import TokamakCore
-@_exported import TokamakStaticHTML
-
 extension Router {
 
     public typealias ViewHandler<T: View> = (IncomingRequest, OutgoingResponse) async throws -> T
@@ -46,6 +42,8 @@ extension Router {
     }
 }
 
+// MARK: - Request Environment
+
 private struct RequestKey: EnvironmentKey {
     static var defaultValue: Compute.IncomingRequest?
 }
@@ -56,6 +54,8 @@ extension EnvironmentValues {
         set { self[RequestKey.self] = newValue }
     }
 }
+
+// MARK: - Response Environment
 
 private struct ResponseKey: EnvironmentKey {
     static var defaultValue: Compute.OutgoingResponse?
