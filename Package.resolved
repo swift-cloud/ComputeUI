@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swift-cloud/Compute",
       "state" : {
-        "revision" : "0eb31ee13d0a7594be101d073bd8d4b6dca6190f",
-        "version" : "2.4.0"
+        "revision" : "c76b389b3d6c958788fbf21241e31107c5697a53",
+        "version" : "2.4.1"
       }
     },
     {
@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/TokamakUI/Tokamak",
       "state" : {
-        "branch" : "main",
-        "revision" : "f1cbfcf073e2675566b0e9aa337441357d40d88a"
+        "revision" : "f1cbfcf073e2675566b0e9aa337441357d40d88a",
+        "version" : "0.11.1"
       }
     }
   ],

@@ -17,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
          .package(url: "https://github.com/swift-cloud/Compute", from: "2.4.0"),
-         .package(url: "https://github.com/TokamakUI/Tokamak", branch: "main")
+         .package(url: "https://github.com/TokamakUI/Tokamak", from: "0.11.1")
     ],
     targets: [
         .target(name: "ComputeUI", dependencies: [
