@@ -37,7 +37,11 @@ extension Router {
                 .environment(\.request, req)
                 .environment(\.response, res)
             let html = StaticHTMLRenderer(view).render()
-            try await res.status(.ok).send(html: html)
+            try await res
+                .status(.ok)
+                .upgradeToHTTP3()
+                .compress()
+                .send(html: html)
         }
     }
 }
